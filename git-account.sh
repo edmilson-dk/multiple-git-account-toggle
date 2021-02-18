@@ -3,9 +3,13 @@
 printf '
   ======================================================
         Enter the number for the desired account
-  ======================================================\n\n
-'
-printf 'Choose your github account: \n\n [1] - DKSecurity99 \n [2] - edmilson-dk \n\n >> '
+  ======================================================\n\n'
+
+printf 'Choose your github account: \n\n 
+[1] - DKSecurity99 \n 
+[2] - edmilson-dk 
+\n\n >> '
+
 read ACCOUNT
 
 case $ACCOUNT in
@@ -17,9 +21,11 @@ case $ACCOUNT in
   USER_NAME="edmilson-dk"
   USER_EMAIL="droidvidaboa@gmail.com"
   ;;
+*) 
+  echo '\n!Invalid option\n'
 esac
 
 git config --global user.name $USER_NAME
 git config --global user.email $USER_EMAIL
 
-echo "ALTERADO PARA: "$USER_NAME "("$USER_EMAIL")"
+echo "Global account changed to: "$USER_NAME "("$USER_EMAIL")"
